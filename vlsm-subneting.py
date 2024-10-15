@@ -73,23 +73,23 @@ def vlsm_subnetting(network, subnets):
 
 # Pide datos de la red principal a subnetear
 def main():
-    network = input("Ingrese la red principal a subnetear(por ejemplo, 192.168.0.0/24): ")
-    num_subnets = int(input("¿Cuántas subredes necesitas?: "))
+    network = input("\nIngrese la red principal a subnetear(ejm, 192.168.0.0/24):\n-> ")
+    num_subnets = int(input("\n¿Cuántas subredes necesitas?:\n-> "))
     
     subnets = []
     for i in range(num_subnets):
-        name = input(f"Ingrese el nombre de la subred {i+1}: ")
-        hosts = int(input(f"Ingrese la cantidad de hosts para {name}: "))
+        name = input(f"\nIngrese el nombre de la subred {i+1}:\n-> ")
+        hosts = int(input(f"\nIngrese la cantidad de hosts para {name}:\n-> "))
         subnets.append({'name': name, 'hosts': hosts})
     
     # Imprime los resultados
     results = vlsm_subnetting(network, subnets)
     for subnet in results:
-        print(f"Subred: {subnet['name']} con {subnet['hosts']} hosts")
-        print(f"  Network: {subnet['Network']}/{subnet['Mask']}")
-        print(f"  Máscara Decimal: {subnet['Mask Decimal']}")
-        print(f"  Primera IP válida: {subnet['Host Range'][0]}\n  Última IP válida  {subnet['Host Range'][1]}")
-        print(f"  Broadcast: {subnet['Broadcast']}")
+        print(f"\n✅ Subred {subnet['name']}: con {subnet['hosts']} hosts")
+        print(f"  | Red: {subnet['Network']}/{subnet['Mask']} |")
+        print(f"  | Máscara: {subnet['Mask Decimal']} |")
+        print(f"  | Primera IP válida: {subnet['Host Range'][0]} |\n  | Última IP válida: {subnet['Host Range'][1]} |")
+        print(f"  | Broadcast: {subnet['Broadcast']} |")
         print()
 
 if __name__ == "__main__":

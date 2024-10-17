@@ -10,3 +10,6 @@ Subnetea cualquier dirección de red con VLSM.
    
 > [!IMPORTANT]
 No olvides especificar el prefijo (/24 for example)
+
+> [!TIP]
+Puedes agregar una interfaz bien chévere usando la librería de Tkinter
